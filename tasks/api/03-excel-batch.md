@@ -6,7 +6,7 @@
 
 ## 任务列表
 
-### T1: Excel 模板下载 `[ ]`
+### T1: Excel 模板下载 `[x]`
 
 **接口**：`GET /api/v1/batch/template`
 
@@ -20,7 +20,7 @@
 
 ---
 
-### T2: Excel 上传与解析 `[ ]`
+### T2: Excel 上传与解析 `[x]`
 
 **接口**：`POST /api/v1/batch/upload`
 
@@ -36,7 +36,7 @@
 
 ---
 
-### T3: 逐行匹配 `[ ]`
+### T3: 逐行匹配 `[x]`
 
 **接口**：`POST /api/v1/batch/{batch_id}/match`
 
@@ -53,7 +53,7 @@
 
 ---
 
-### T4: 重复行检测 `[ ]`
+### T4: 重复行检测 `[x]`
 
 - 相同 Part Number + 数量行提示合并
 - 返回 `duplicate_rows` 列表供用户确认
@@ -62,7 +62,7 @@
 
 ---
 
-### T5: 批量加入采购清单 `[ ]`
+### T5: 批量加入采购清单 `[x]`
 
 **接口**：`POST /api/v1/batch/{batch_id}/add-to-cart`
 
@@ -81,7 +81,7 @@
 
 ---
 
-### T6: 未匹配项转人工 `[ ]`
+### T6: 未匹配项转人工 `[x]`
 
 **接口**：`POST /api/v1/batch/{batch_id}/create-tickets`
 

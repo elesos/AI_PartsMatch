@@ -1,0 +1,4 @@
+import { DataTable, type Column } from '../components/DataTable'
+interface DemoRow { id: string; module: string; state: string; scope: string }
+const columns: Column<DemoRow>[] = [{ key: 'module', title: '模块', render: row => row.module, sortable: true, searchValue: row => row.module }, { key: 'scope', title: '数据范围', render: row => row.scope, searchValue: row => row.scope }, { key: 'state', title: '状态', render: row => <span className="state-chip">{row.state}</span>, sortable: true, searchValue: row => row.state }]
+export function ModulePage({ eyebrow, title, description }: { eyebrow: string; title: string; description: string }) { const rows: DemoRow[] = [{ id: 'foundation', module: title, scope: description, state: '待接入业务任务' }]; return <div><header className="page-heading"><div><p className="eyebrow">{eyebrow}</p><h1>{title}</h1><p>{description}</p></div></header><DataTable rows={rows} columns={columns} rowKey={row => row.id} caption={`${title}数据`} /></div> }

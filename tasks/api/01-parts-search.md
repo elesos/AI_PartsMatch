@@ -6,7 +6,7 @@
 
 ## 任务列表
 
-### T1: Part Number 精确匹配 `[ ]`
+### T1: Part Number 精确匹配 `[x]`
 
 **接口**：`GET /api/v1/search?type=part_no&q={value}`
 
@@ -19,7 +19,7 @@
 
 ---
 
-### T2: OEM 编号匹配 `[ ]`
+### T2: OEM 编号匹配 `[x]`
 
 **接口**：`GET /api/v1/search?type=oem&q={value}`
 
@@ -32,7 +32,7 @@
 
 ---
 
-### T3: 设备型号匹配 `[ ]`
+### T3: 设备型号匹配 `[x]`
 
 **接口**：`GET /api/v1/search?type=machine&q={brand}&model={model}`
 
@@ -45,7 +45,7 @@
 
 ---
 
-### T4: 发动机型号匹配 `[ ]`
+### T4: 发动机型号匹配 `[x]`
 
 **接口**：`GET /api/v1/search?type=engine&q={engine_model}`
 
@@ -57,7 +57,7 @@
 
 ---
 
-### T5: 配件名称与别名搜索 `[ ]`
+### T5: 配件名称与别名搜索 `[x]`
 
 **接口**：`GET /api/v1/search?type=text&q={keyword}&lang={zh|en|vi}`
 
@@ -69,7 +69,7 @@
 
 ---
 
-### T6: 综合搜索入口 `[ ]`
+### T6: 综合搜索入口 `[x]`
 
 **接口**：`POST /api/v1/search`
 
@@ -99,7 +99,7 @@
 
 ---
 
-### T7: 配件详情 `[ ]`
+### T7: 配件详情 `[x]`
 
 **接口**：`GET /api/v1/parts/{id}`
 
@@ -111,7 +111,7 @@
 
 ---
 
-### T8: 分类与导航数据 `[ ]`
+### T8: 分类与导航数据 `[x]`
 
 **接口**：
 - `GET /api/v1/categories` — 一级分类（PRD §9.1）
@@ -122,7 +122,7 @@
 
 ---
 
-### T9: 搜索索引优化 `[ ]`
+### T9: 搜索索引优化 `[x]`
 
 - `part_no`, `oem_code` 建唯一/普通索引
 - `part_alias.alias` 建索引

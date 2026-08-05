@@ -1,0 +1,2 @@
+import { applyPublicConfig, getApiBaseUrl } from './runtimeConfig'
+it('accepts only HTTPS or loopback API values from the public allowlisted response', () => { const before = getApiBaseUrl(); applyPublicConfig({ 'frontend.api_base_url': 'http://attacker.test' }); expect(getApiBaseUrl()).toBe(before); applyPublicConfig({ 'frontend.api_base_url': 'https://match-api.elesos.cc/' }); expect(getApiBaseUrl()).toBe('https://match-api.elesos.cc') })

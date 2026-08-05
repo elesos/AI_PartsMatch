@@ -6,11 +6,11 @@
 
 ## 任务列表
 
-### T1: 项目初始化 `[ ]`
+### T1: 项目初始化 `[x]`
 
 - 创建 API 服务项目（推荐 FastAPI / NestJS）
 - 目录结构：`routers/`, `services/`, `models/`, `schemas/`, `core/`
-- 配置管理：`.env` 支持 `DATABASE_URL`, `REDIS_URL`, `OSS_*`, `AI_API_KEY`
+- 配置管理：动态业务配置存入 `sys_configs`；引导配置使用容器参数或 Docker secrets
 - 统一响应格式：`{ "code": 0, "message": "ok", "data": {} }`
 - 全局异常处理与请求日志中间件
 
@@ -18,7 +18,7 @@
 
 ---
 
-### T2: 数据库连接与迁移 `[ ]`
+### T2: 数据库连接与迁移 `[x]`
 
 - 接入 PostgreSQL（或 MySQL）
 - 集成 ORM（SQLAlchemy / Prisma / TypeORM）
@@ -33,7 +33,7 @@
 
 ---
 
-### T3: Redis 缓存接入 `[ ]`
+### T3: Redis 缓存接入 `[x]`
 
 - 连接 Redis
 - 封装缓存工具类（get/set/delete，TTL 支持）
@@ -43,7 +43,7 @@
 
 ---
 
-### T4: 对象存储接入 `[ ]`
+### T4: 对象存储接入 `[x]`
 
 - 接入 MinIO / S3 兼容存储
 - 封装上传服务：支持图片（jpg/png/webp/heic）、Excel（xlsx/xls）
@@ -54,7 +54,7 @@
 
 ---
 
-### T5: 认证与权限骨架 `[ ]`
+### T5: 认证与权限骨架 `[x]`
 
 - 后台管理员 JWT 登录（`/api/v1/admin/auth/login`）
 - 角色：`admin`, `operator`（客服）
@@ -65,7 +65,7 @@
 
 ---
 
-### T6: Docker Compose 开发环境 `[ ]`
+### T6: Docker Compose 开发环境 `[x]`
 
 ```yaml
 services:
@@ -79,7 +79,7 @@ services:
 
 ---
 
-### T7: API 文档 `[ ]`
+### T7: API 文档 `[x]`
 
 - 集成 OpenAPI / Swagger UI（`/docs`）
 - 为已实现的接口补充 request/response schema

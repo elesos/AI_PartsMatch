@@ -6,7 +6,7 @@
 
 ## 任务列表
 
-### T1: 用户提交工单 `[ ]`
+### T1: 用户提交工单 `[x]`
 
 **接口**：`POST /api/v1/tickets`
 
@@ -38,7 +38,7 @@
 
 ---
 
-### T2: 工单状态流转 `[ ]`
+### T2: 工单状态流转 `[x]`
 
 状态机（PRD §11.9）：
 
@@ -58,7 +58,7 @@ pending → processing → need_info → matched → in_cart → closed
 
 ---
 
-### T3: 客服回填配件 `[ ]`
+### T3: 客服回填配件 `[x]`
 
 **接口**：`POST /api/v1/admin/tickets/{id}/resolve`
 
@@ -79,7 +79,7 @@ pending → processing → need_info → matched → in_cart → closed
 
 ---
 
-### T4: 用户将人工结果加入清单 `[ ]`
+### T4: 用户将人工结果加入清单 `[x]`
 
 **接口**：`POST /api/v1/tickets/{id}/add-to-cart`
 
@@ -90,7 +90,7 @@ pending → processing → need_info → matched → in_cart → closed
 
 ---
 
-### T5: 工单列表与筛选（管理端）`[ ]`
+### T5: 工单列表与筛选（管理端）`[x]`
 
 **接口**：`GET /api/v1/admin/tickets`
 
@@ -102,7 +102,7 @@ pending → processing → need_info → matched → in_cart → closed
 
 ---
 
-### T6: 联系方式脱敏 `[ ]`
+### T6: 联系方式脱敏 `[x]`
 
 - 对外 API：`138****1234`
 - 管理端完整展示（需 `operator` 权限）

@@ -10,8 +10,10 @@ import { MachinesPage } from './pages/MachinesPage'
 import { CrossReferencesPage } from './pages/CrossReferencesPage'
 import { TicketsPage } from './pages/TicketsPage'
 import { QueryLogsPage } from './pages/QueryLogsPage'
+import { UsersPage } from './pages/UsersPage'
 
 function AnyOperator() { return <RoleGuard roles={['admin', 'operator']} /> }
+function AdminOnly() { return <RoleGuard roles={['admin']} /> }
 function IndexRoute() { const { user } = useAuth(); return user?.role === 'operator' ? <Navigate to="/tickets" replace /> : <DashboardPage /> }
 const router = createBrowserRouter([
   { path: '/login', element: <LoginPage /> },
@@ -29,6 +31,7 @@ const router = createBrowserRouter([
       { path: 'query-logs', element: <QueryLogsPage /> },
       { path: 'query-logs/:queryLogId', element: <QueryLogsPage /> },
     ] },
+    { element: <AdminOnly />, children: [{ path: 'users', element: <UsersPage /> }] },
     { path: 'unauthorized', element: <UnauthorizedPage /> }, { path: '*', element: <Navigate to="/" replace /> },
   ] }] },
 ])

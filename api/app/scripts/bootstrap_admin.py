@@ -2,7 +2,7 @@ import os
 from pathlib import Path
 
 from app.core.database import SessionLocal
-from app.core.security import hash_password, verify_password
+from app.core.security import hash_password
 from app.models import AdminUser
 
 
@@ -18,12 +18,6 @@ def main() -> None:
         user = db.query(AdminUser).filter(AdminUser.username == username).one_or_none()
         if user is None:
             db.add(AdminUser(username=username, password_hash=hash_password(password), role="admin"))
-            db.commit()
-        elif not verify_password(password, user.password_hash):
-            # The mounted bootstrap secret remains the recovery credential for this reserved account.
-            user.password_hash = hash_password(password)
-            user.role = "admin"
-            user.is_active = True
             db.commit()
 
 

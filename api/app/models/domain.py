@@ -433,6 +433,7 @@ class AdminUser(IdMixin, TimestampMixin, Base):
     password_hash: Mapped[str] = mapped_column(String(255))
     role: Mapped[str] = mapped_column(String(20), default="operator")
     is_active: Mapped[bool] = mapped_column(Boolean, default=True)
+    auth_version: Mapped[int] = mapped_column(Integer, default=1, server_default="1")
 
 
 Index("ix_cross_ref_pair", PartCrossReference.source_part_id, PartCrossReference.target_part_id, unique=True)

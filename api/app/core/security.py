@@ -36,6 +36,7 @@ def create_access_token(user: AdminUser) -> tuple[str, int]:
         "sub": user.id,
         "username": user.username,
         "role": user.role,
+        "ver": user.auth_version,
         "exp": datetime.now(UTC) + timedelta(seconds=seconds),
     }
     return jwt.encode(payload, get_settings().jwt_secret, algorithm=ALGORITHM), seconds
@@ -92,7 +93,8 @@ def get_current_admin(
     except JWTError as error:
         raise HTTPException(status_code=401, detail="invalid or expired token") from error
     user = db.get(AdminUser, user_id) if user_id else None
-    if user is None or not user.is_active or user.role not in {"admin", "operator"}:
+    if (user is None or not user.is_active or user.role not in {"admin", "operator"}
+            or payload.get("ver") != user.auth_version):
         raise HTTPException(status_code=401, detail="invalid administrator")
     return user
 
